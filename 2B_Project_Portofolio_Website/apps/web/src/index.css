@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 25% 10%;
+    --foreground: 210 40% 98%;
+    --card: 230 25% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 230 25% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 175 70% 45%;
+    --primary-foreground: 230 25% 10%;
+    --secondary: 180 60% 30%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 230 20% 20%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 175 70% 45%;
+    --accent-foreground: 230 25% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 230 20% 22%;
+    --input: 230 20% 22%;
+    --ring: 175 70% 45%;
+    --radius: 0.75rem;
+    
+    /* Case Study Accents */
+    --problem: 24 95% 53%;
+    --solution: 210 100% 60%;
+    --result: 142 71% 45%;
+  }
+
+  .dark {
+    --background: 230 25% 10%;
+    --foreground: 210 40% 98%;
+    --card: 230 25% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 230 25% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 175 70% 45%;
+    --primary-foreground: 230 25% 10%;
+    --secondary: 180 60% 30%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 230 20% 20%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 175 70% 45%;
+    --accent-foreground: 230 25% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 230 20% 22%;
+    --input: 230 20% 22%;
+    --ring: 175 70% 45%;
+    
+    /* Case Study Accents */
+    --problem: 24 95% 53%;
+    --solution: 210 100% 60%;
+    --result: 142 71% 45%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "DM Sans", sans-serif;
+    overflow-x: clip;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Outfit", sans-serif;
+    text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-overlay {
+    position: relative;
+  }
+
+  .gradient-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(var(--background) / 0.95) 0%, hsl(var(--background) / 0.75) 100%);
+    z-index: 1;
+  }
+
+  .gradient-overlay > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .premium-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+
+  .premium-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px hsl(var(--primary) / 0.15);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  .section-spacing {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-spacing {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+  
+  .text-problem {
+    color: hsl(var(--problem));
+  }
+  .bg-problem {
+    background-color: hsl(var(--problem));
+  }
+  .text-solution {
+    color: hsl(var(--solution));
+  }
+  .bg-solution {
+    background-color: hsl(var(--solution));
+  }
+  .text-result {
+    color: hsl(var(--result));
+  }
+  .bg-result {
+    background-color: hsl(var(--result));
+  }
+}
